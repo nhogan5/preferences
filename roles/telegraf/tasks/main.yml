@@ -1,0 +1,10 @@
+---
+- name: pull telegraf
+  unarchive:
+    src: https://dl.influxdata.com/telegraf/releases/telegraf-1.8.1_linux_amd64.tar.gz
+    dest: /nah/
+    remote_src: yes
+- name: push configs to target
+  template: 
+    src: {{ role_path }}/templates/telegraf.conf.j2
+    dest: "/nah/telegraf/etc/telegraf/telegraf.conf"

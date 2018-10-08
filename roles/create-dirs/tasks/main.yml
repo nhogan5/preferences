@@ -1,0 +1,6 @@
+---
+- name: Create my dir
+  file:
+    path: /nah
+    state: directory
+    
